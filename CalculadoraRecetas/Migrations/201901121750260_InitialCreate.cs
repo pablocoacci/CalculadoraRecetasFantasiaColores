@@ -17,7 +17,8 @@ namespace CalculadoraRecetas.Migrations
                         Telefono = c.String(maxLength: 25, unicode: false),
                         Celular = c.String(maxLength: 25, unicode: false),
                         Direccion = c.String(maxLength: 150, unicode: false),
-                    })
+                        Notas = c.String(maxLength: 2500, unicode: false),
+                })
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
