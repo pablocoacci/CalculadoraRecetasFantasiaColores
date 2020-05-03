@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosAddMod));
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +42,7 @@
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.txtGananciaTotal = new DevExpress.XtraEditors.TextEdit();
-            this.txtPrecioFinal = new DevExpress.XtraEditors.TextEdit();
+            this.txtPrecioFinalSugerido = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombreReceta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFormula = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCostoIndirectoTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCostoTotalMP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,22 +78,35 @@
             this.txtEstado = new DevExpress.XtraEditors.TextEdit();
             this.btnEntragarPedido = new System.Windows.Forms.Button();
             this.btnAbortarPedido = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtNotas = new DevExpress.XtraEditors.MemoEdit();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPrecioVenta = new DevExpress.XtraEditors.TextEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGananciaTotal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioFinal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioFinalSugerido.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrdenesLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientesLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboClientes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoInd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNotas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioVenta.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
             // label1
             // 
@@ -134,7 +147,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(507, 93);
+            this.label5.Location = new System.Drawing.Point(510, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 4;
@@ -143,11 +156,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(525, 15);
+            this.label6.Location = new System.Drawing.Point(483, 51);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.Size = new System.Drawing.Size(110, 13);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Precio Final:";
+            this.label6.Text = "Precio Final Sugerido:";
             // 
             // txtId
             // 
@@ -184,9 +197,10 @@
             // 
             // txtGananciaTotal
             // 
-            this.txtGananciaTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsPedido, "GananciaTota", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
+            this.txtGananciaTotal.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsPedido, "GananciaTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
+            this.txtGananciaTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsPedido, "GananciaTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
             this.txtGananciaTotal.Enabled = false;
-            this.txtGananciaTotal.Location = new System.Drawing.Point(596, 90);
+            this.txtGananciaTotal.Location = new System.Drawing.Point(599, 164);
             this.txtGananciaTotal.Name = "txtGananciaTotal";
             this.txtGananciaTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtGananciaTotal.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -198,21 +212,21 @@
             this.txtGananciaTotal.TabIndex = 11;
             this.txtGananciaTotal.ToolTip = "Ganancia total del pedido";
             // 
-            // txtPrecioFinal
+            // txtPrecioFinalSugerido
             // 
-            this.txtPrecioFinal.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsPedido, "PrecioFinalTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
-            this.txtPrecioFinal.Enabled = false;
-            this.txtPrecioFinal.Location = new System.Drawing.Point(596, 12);
-            this.txtPrecioFinal.Name = "txtPrecioFinal";
-            this.txtPrecioFinal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtPrecioFinal.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtPrecioFinal.Properties.Appearance.Options.UseFont = true;
-            this.txtPrecioFinal.Properties.Appearance.Options.UseForeColor = true;
-            this.txtPrecioFinal.Properties.Mask.EditMask = "n2";
-            this.txtPrecioFinal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPrecioFinal.Size = new System.Drawing.Size(115, 20);
-            this.txtPrecioFinal.TabIndex = 12;
-            this.txtPrecioFinal.ToolTip = "Precio total final de venta del pedido";
+            this.txtPrecioFinalSugerido.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsPedido, "PrecioVentaSugerido", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
+            this.txtPrecioFinalSugerido.Enabled = false;
+            this.txtPrecioFinalSugerido.Location = new System.Drawing.Point(599, 48);
+            this.txtPrecioFinalSugerido.Name = "txtPrecioFinalSugerido";
+            this.txtPrecioFinalSugerido.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtPrecioFinalSugerido.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtPrecioFinalSugerido.Properties.Appearance.Options.UseFont = true;
+            this.txtPrecioFinalSugerido.Properties.Appearance.Options.UseForeColor = true;
+            this.txtPrecioFinalSugerido.Properties.Mask.EditMask = "n2";
+            this.txtPrecioFinalSugerido.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioFinalSugerido.Size = new System.Drawing.Size(115, 20);
+            this.txtPrecioFinalSugerido.TabIndex = 12;
+            this.txtPrecioFinalSugerido.ToolTip = "Precio total final de venta del pedido";
             // 
             // groupBox1
             // 
@@ -222,9 +236,9 @@
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.gridControl1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 128);
+            this.groupBox1.Location = new System.Drawing.Point(12, 190);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(705, 271);
+            this.groupBox1.Size = new System.Drawing.Size(705, 289);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordenes";
@@ -232,7 +246,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(92, 242);
+            this.btnEliminar.Location = new System.Drawing.Point(92, 260);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 2;
@@ -243,7 +257,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAgregar.Location = new System.Drawing.Point(11, 242);
+            this.btnAgregar.Location = new System.Drawing.Point(11, 260);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 1;
@@ -260,9 +274,7 @@
             this.gridControl1.Location = new System.Drawing.Point(11, 19);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoExEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(688, 217);
+            this.gridControl1.Size = new System.Drawing.Size(688, 235);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -315,13 +327,6 @@
             this.colFormula.Visible = true;
             this.colFormula.VisibleIndex = 1;
             this.colFormula.Width = 57;
-            // 
-            // repositoryItemMemoExEdit1
-            // 
-            this.repositoryItemMemoExEdit1.AutoHeight = false;
-            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
             // colCantidad
             // 
@@ -400,7 +405,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(642, 405);
+            this.btnCancelar.Location = new System.Drawing.Point(642, 485);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 14;
@@ -411,7 +416,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(561, 405);
+            this.btnAceptar.Location = new System.Drawing.Point(561, 485);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 15;
@@ -518,7 +523,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(534, 41);
+            this.label7.Location = new System.Drawing.Point(537, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 17;
@@ -528,7 +533,7 @@
             // 
             this.txtCostoMP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsPedido, "PercioMPTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
             this.txtCostoMP.Enabled = false;
-            this.txtCostoMP.Location = new System.Drawing.Point(596, 38);
+            this.txtCostoMP.Location = new System.Drawing.Point(599, 85);
             this.txtCostoMP.Name = "txtCostoMP";
             this.txtCostoMP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtCostoMP.Properties.Appearance.Options.UseFont = true;
@@ -539,7 +544,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(535, 67);
+            this.label8.Location = new System.Drawing.Point(538, 128);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 19;
@@ -549,7 +554,7 @@
             // 
             this.txtCostoInd.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsPedido, "CostoIndirectoTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
             this.txtCostoInd.Enabled = false;
-            this.txtCostoInd.Location = new System.Drawing.Point(596, 64);
+            this.txtCostoInd.Location = new System.Drawing.Point(599, 125);
             this.txtCostoInd.Name = "txtCostoInd";
             this.txtCostoInd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtCostoInd.Properties.Appearance.Options.UseFont = true;
@@ -611,11 +616,53 @@
             this.btnAbortarPedido.UseVisualStyleBackColor = true;
             this.btnAbortarPedido.Click += new System.EventHandler(this.btnAbortarPedido_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(57, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Notas:";
+            // 
+            // txtNotas
+            // 
+            this.txtNotas.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsPedido, "Notas", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtNotas.Location = new System.Drawing.Point(101, 116);
+            this.txtNotas.Name = "txtNotas";
+            this.txtNotas.Size = new System.Drawing.Size(285, 68);
+            this.txtNotas.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(507, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Precio de Venta:";
+            // 
+            // txtPrecioVenta
+            // 
+            this.txtPrecioVenta.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsPedido, "PrecioVentaReal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
+            this.txtPrecioVenta.Location = new System.Drawing.Point(599, 13);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtPrecioVenta.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txtPrecioVenta.Properties.Appearance.Options.UseFont = true;
+            this.txtPrecioVenta.Properties.Appearance.Options.UseForeColor = true;
+            this.txtPrecioVenta.Size = new System.Drawing.Size(115, 20);
+            this.txtPrecioVenta.TabIndex = 29;
+            // 
             // frmPedidosAddMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 435);
+            this.ClientSize = new System.Drawing.Size(726, 515);
+            this.Controls.Add(this.txtPrecioVenta);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtNotas);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAbortarPedido);
             this.Controls.Add(this.btnEntragarPedido);
             this.Controls.Add(this.txtEstado);
@@ -628,7 +675,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtPrecioFinal);
+            this.Controls.Add(this.txtPrecioFinalSugerido);
             this.Controls.Add(this.txtGananciaTotal);
             this.Controls.Add(this.dtpFechaEntrega);
             this.Controls.Add(this.dtpFechaIngreso);
@@ -649,21 +696,23 @@
             this.Text = "Detalle Pedido";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPedidosAddMod_FormClosing);
             this.Load += new System.EventHandler(this.frmPedidosAddMod_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGananciaTotal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioFinal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioFinalSugerido.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrdenesLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientesLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboClientes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoMP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCostoInd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNotas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioVenta.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -681,7 +730,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
         private DevExpress.XtraEditors.TextEdit txtGananciaTotal;
-        private DevExpress.XtraEditors.TextEdit txtPrecioFinal;
+        private DevExpress.XtraEditors.TextEdit txtPrecioFinalSugerido;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
@@ -701,7 +750,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGananciaTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colPrecioTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colId_Receta;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colCostoIndirectoTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colCostoTotalMP;
         private System.Windows.Forms.Label label7;
@@ -719,5 +767,10 @@
         private DevExpress.XtraEditors.TextEdit txtEstado;
         private System.Windows.Forms.Button btnEntragarPedido;
         private System.Windows.Forms.Button btnAbortarPedido;
+        private System.Windows.Forms.Label label10;
+        private DevExpress.XtraEditors.MemoEdit txtNotas;
+        private System.Windows.Forms.Label label11;
+        private DevExpress.XtraEditors.TextEdit txtPrecioVenta;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
     }
 }

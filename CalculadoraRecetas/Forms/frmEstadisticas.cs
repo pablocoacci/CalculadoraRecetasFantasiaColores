@@ -69,11 +69,11 @@ namespace CalculadoraRecetas.Forms
             if (pedidos == null) return;
 
             var seriePointVtasTotales = (from p in pedidos
-                                         group p.PrecioFinalTotal by p.FechaEntrega.ToString("MMMM") into g
+                                         group p.PrecioVentaSugerido by p.FechaEntrega.ToString("MMMM") into g
                                          select new SeriesPoint(g.Key, Math.Round(g.Sum(), 2))).ToArray();
 
             var seriePointUtilidades = (from p in pedidos
-                                        group p.GananciaTota by p.FechaEntrega.ToString("MMMM") into g
+                                        group p.GananciaTotal by p.FechaEntrega.ToString("MMMM") into g
                                         select new SeriesPoint(g.Key, Math.Round(g.Sum(), 2))).ToArray();
 
             Series serieVtasTotales = new Series("Vtas. Totales", ViewType.Bar);
@@ -95,7 +95,7 @@ namespace CalculadoraRecetas.Forms
             var pedidos = GetPedidosByDates(dtDesde, dtHasta);
             if (pedidos == null) return;
 
-            var totalUtilidades = Math.Round(pedidos.Sum(a => a.GananciaTota), 2);
+            var totalUtilidades = Math.Round(pedidos.Sum(a => a.GananciaTotal), 2);
             var ordenes = new List<Orden>();
 
             foreach (var p in pedidos)

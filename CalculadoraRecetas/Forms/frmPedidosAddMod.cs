@@ -50,6 +50,8 @@ namespace CalculadoraRecetas.Forms
 
             if (_ped.Id != 0 && _ped.Estado != Pedido.EstadoPedido.Pendiente)
             {
+                txtNotas.Enabled = false;
+                txtPrecioVenta.Enabled = false;
                 dtpFechaEntrega.Enabled = false;
                 cboClientes.Enabled = false;
                 btnAgregar.Enabled = false;
@@ -61,6 +63,8 @@ namespace CalculadoraRecetas.Forms
             }
             else
             {
+                txtNotas.Enabled = true;
+                txtPrecioVenta.Enabled = true;
                 dtpFechaEntrega.Enabled = true;
                 cboClientes.Enabled = true;
                 btnAgregar.Enabled = true;

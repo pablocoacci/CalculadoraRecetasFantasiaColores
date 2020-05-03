@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201901292228329_CulumnaEstadoPedido.Designer.cs">
       <DependentUpon>201901292228329_CulumnaEstadoPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005032301243_Add_NotasYPrecioVenta_Pedidos.cs" />
+    <Compile Include="Migrations\202005032301243_Add_NotasYPrecioVenta_Pedidos.Designer.cs">
+      <DependentUpon>202005032301243_Add_NotasYPrecioVenta_Pedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -269,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901292228329_CulumnaEstadoPedido.resx">
       <DependentUpon>201901292228329_CulumnaEstadoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005032301243_Add_NotasYPrecioVenta_Pedidos.resx">
+      <DependentUpon>202005032301243_Add_NotasYPrecioVenta_Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

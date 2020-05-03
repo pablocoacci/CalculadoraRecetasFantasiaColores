@@ -21,6 +21,8 @@ namespace CalculadoraRecetas.Clases.Mappings
             this.Property(a => a.FechaPedido).HasColumnName("FechaPedido").HasColumnType("datetime");
             this.Property(a => a.FechaEntrega).HasColumnName("FechaEntrega").HasColumnType("datetime");
             this.Property(a => a.Estado).HasColumnName("Estado").HasColumnType("int");
+            this.Property(a => a.Notas).HasColumnName("Notas").HasColumnType("varchar").HasMaxLength(1500);
+            this.Property(a => a.PrecioVentaReal).HasColumnName("PrecioVentaReal").HasColumnType("decimal").HasPrecision(19, 2);
 
             this.HasRequired(a => a.Cliente).WithMany().HasForeignKey(a => a.Id_Cliente);
 
@@ -30,8 +32,8 @@ namespace CalculadoraRecetas.Clases.Mappings
             this.Ignore(a => a.TelefonoCliente);
             this.Ignore(a => a.CelularCliente);
             this.Ignore(a => a.MailCliente);
-            this.Ignore(a => a.GananciaTota);
-            this.Ignore(a => a.PrecioFinalTotal);
+            this.Ignore(a => a.GananciaTotal);
+            this.Ignore(a => a.PrecioVentaSugerido);
             this.Ignore(a => a.OrdenesValidas);
             this.Ignore(a => a.PercioMPTotal);
             this.Ignore(a => a.CostoIndirectoTotal);

@@ -20,10 +20,12 @@ namespace CalculadoraRecetas.Clases.Dominio
         public int Id_Cliente { get; set; }
         public DateTime FechaPedido { get; set; }
         public DateTime FechaEntrega { get; set; }
+        public string Notas { get; set; }
+        public decimal PrecioVentaReal { get; set; }
         public EstadoPedido Estado { get; set; }
-        public virtual Cliente Cliente { get; set;}
+        public virtual Cliente Cliente { get; set; }
         public virtual IList<Orden> OrdenesRealizadas { get; set; }
-        
+
         public string EstadoStr { get { return Estado.ToString("g"); } }
         public IList<Orden> OrdenesValidas { get { return OrdenesRealizadas.Where(a => !a.OrdenEliminada).ToList(); } }
         public string NombreCliente { get { return Cliente.Nombre; } }
@@ -33,7 +35,7 @@ namespace CalculadoraRecetas.Clases.Dominio
         public string MailCliente { get { return Cliente.Mail; } }
         public decimal PercioMPTotal { get { return Math.Round(OrdenesValidas.Sum(a => a.CostoTotalMP), 2); } }
         public decimal CostoIndirectoTotal { get { return Math.Round(OrdenesValidas.Sum(a => a.CostoIndirectoTotal), 2); } }
-        public decimal GananciaTota { get { return Math.Round(OrdenesValidas.Sum(a => a.GananciaTotal), 2); } }
-        public decimal PrecioFinalTotal { get { return Math.Round(OrdenesValidas.Sum(a => a.PrecioTotal), 2); } }
+        public decimal GananciaTotal { get { return Math.Round(PrecioVentaReal - PercioMPTotal - CostoIndirectoTotal, 2); } }
+        public decimal PrecioVentaSugerido { get { return Math.Round(OrdenesValidas.Sum(a => a.PrecioTotal), 2); } }
     }
 }

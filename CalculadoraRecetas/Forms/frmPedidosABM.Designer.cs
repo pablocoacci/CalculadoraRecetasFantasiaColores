@@ -46,9 +46,9 @@
             this.colTelefonoCliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCelularCliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMailCliente = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGananciaTota = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrecioFinalTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEstadoStr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGananciaTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrecioVentaReal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -134,13 +134,14 @@
             this.colTelefonoCliente,
             this.colCelularCliente,
             this.colMailCliente,
-            this.colGananciaTota,
-            this.colPrecioFinalTotal,
-            this.colEstadoStr});
+            this.colEstadoStr,
+            this.colGananciaTotal,
+            this.colPrecioVentaReal});
             this.gridView1.GridControl = this.grdPedidos;
             this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colEstadoStr, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
@@ -226,26 +227,6 @@
             this.colMailCliente.Visible = true;
             this.colMailCliente.VisibleIndex = 6;
             // 
-            // colGananciaTota
-            // 
-            this.colGananciaTota.Caption = "Ganancia Total";
-            this.colGananciaTota.FieldName = "GananciaTota";
-            this.colGananciaTota.Name = "colGananciaTota";
-            this.colGananciaTota.OptionsColumn.AllowEdit = false;
-            this.colGananciaTota.OptionsColumn.ReadOnly = true;
-            this.colGananciaTota.Visible = true;
-            this.colGananciaTota.VisibleIndex = 7;
-            // 
-            // colPrecioFinalTotal
-            // 
-            this.colPrecioFinalTotal.Caption = "Precio Total";
-            this.colPrecioFinalTotal.FieldName = "PrecioFinalTotal";
-            this.colPrecioFinalTotal.Name = "colPrecioFinalTotal";
-            this.colPrecioFinalTotal.OptionsColumn.AllowEdit = false;
-            this.colPrecioFinalTotal.OptionsColumn.ReadOnly = true;
-            this.colPrecioFinalTotal.Visible = true;
-            this.colPrecioFinalTotal.VisibleIndex = 8;
-            // 
             // colEstadoStr
             // 
             this.colEstadoStr.Caption = "Estado";
@@ -255,6 +236,30 @@
             this.colEstadoStr.OptionsColumn.ReadOnly = true;
             this.colEstadoStr.Visible = true;
             this.colEstadoStr.VisibleIndex = 9;
+            // 
+            // colGananciaTotal
+            // 
+            this.colGananciaTotal.Caption = "Ganancia";
+            this.colGananciaTotal.FieldName = "GananciaTotal";
+            this.colGananciaTotal.Name = "colGananciaTotal";
+            this.colGananciaTotal.OptionsColumn.AllowEdit = false;
+            this.colGananciaTotal.OptionsColumn.ReadOnly = true;
+            this.colGananciaTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GananciaTotal", "Total: {0:#.##}")});
+            this.colGananciaTotal.Visible = true;
+            this.colGananciaTotal.VisibleIndex = 7;
+            // 
+            // colPrecioVentaReal
+            // 
+            this.colPrecioVentaReal.Caption = "Precio Venta";
+            this.colPrecioVentaReal.FieldName = "PrecioVentaReal";
+            this.colPrecioVentaReal.Name = "colPrecioVentaReal";
+            this.colPrecioVentaReal.OptionsColumn.AllowEdit = false;
+            this.colPrecioVentaReal.OptionsColumn.ReadOnly = true;
+            this.colPrecioVentaReal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PrecioVentaReal", "Total: {0:#.##}")});
+            this.colPrecioVentaReal.Visible = true;
+            this.colPrecioVentaReal.VisibleIndex = 8;
             // 
             // groupBox1
             // 
@@ -391,8 +396,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTelefonoCliente;
         private DevExpress.XtraGrid.Columns.GridColumn colCelularCliente;
         private DevExpress.XtraGrid.Columns.GridColumn colMailCliente;
-        private DevExpress.XtraGrid.Columns.GridColumn colGananciaTota;
-        private DevExpress.XtraGrid.Columns.GridColumn colPrecioFinalTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colEstadoStr;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
@@ -404,5 +407,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboTipoFecha;
         private System.Windows.Forms.Button btnAyuda;
+        private DevExpress.XtraGrid.Columns.GridColumn colGananciaTotal;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrecioVentaReal;
     }
 }

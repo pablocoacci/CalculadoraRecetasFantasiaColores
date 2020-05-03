@@ -106,6 +106,12 @@ namespace CalculadoraRecetas.Clases.DAL
             if (!ped.OrdenesRealizadas.Any())
                 return "El Pedido debe de contener al menos una Orden";
 
+            if (ped.PrecioVentaReal <= 0)
+                return "El precio de venta real debe ser mayor a 0";
+
+            if (ped.Notas.Length > 1500)
+                return "Las notas no pueden tener mas de 1500 caracteres";
+
             if (ped.OrdenesRealizadas.Where(ValidateSaveOrden).Any())
                 return msgOrdenError;
 
