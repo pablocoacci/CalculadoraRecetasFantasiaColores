@@ -105,6 +105,10 @@ namespace CalculadoraRecetas.Forms
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             _ped.FechaEntrega = dtpFechaEntrega.Value;
+
+            if (string.IsNullOrEmpty(_ped.Notas))
+                _ped.Notas = "";
+
             var error = _pedDAL.ValidSave(_ped);
 
             if (error != string.Empty)
