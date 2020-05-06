@@ -61,6 +61,10 @@ namespace CalculadoraRecetas
 
                 builder.RegisterType<Forms.frmEstadisticas>();
 
+                builder.RegisterType<Forms.frmProveedoresMateriales>();
+                builder.RegisterType<Forms.frmCostoMaterialesABM>();
+                builder.RegisterType<Forms.frmCostoMaterialesAddMod>();
+
                 builder.RegisterType<frmMain>();
 
                 Container = builder.Build();

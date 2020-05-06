@@ -35,8 +35,11 @@
             this.btnClientes = new DevExpress.XtraBars.BarButtonItem();
             this.btnPedidos = new DevExpress.XtraBars.BarButtonItem();
             this.btnEstadisticas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCostosMateriles = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +53,14 @@
             this.btnRecetas,
             this.btnClientes,
             this.btnPedidos,
-            this.btnEstadisticas});
+            this.btnEstadisticas,
+            this.btnCostosMateriles});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
+            this.ribbonPage1,
+            this.ribbonPage2});
             this.ribbonControl1.Size = new System.Drawing.Size(1058, 141);
             // 
             // btnMateriasPrimas
@@ -108,6 +113,13 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnEstadisticas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstadisticas_ItemClick);
             // 
+            // btnCostosMateriles
+            // 
+            this.btnCostosMateriles.Caption = "Materiales";
+            this.btnCostosMateriles.Id = 6;
+            this.btnCostosMateriles.Name = "btnCostosMateriles";
+            this.btnCostosMateriles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCostosMateriles_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -123,6 +135,18 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPedidos);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEstadisticas);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "Costos";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCostosMateriles);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // panelPrincipal
             // 
@@ -159,6 +183,9 @@
         private DevExpress.XtraBars.BarButtonItem btnClientes;
         private DevExpress.XtraBars.BarButtonItem btnPedidos;
         private DevExpress.XtraBars.BarButtonItem btnEstadisticas;
+        private DevExpress.XtraBars.BarButtonItem btnCostosMateriles;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
 

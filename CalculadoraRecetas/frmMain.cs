@@ -1,12 +1,4 @@
 ﻿using CalculadoraRecetas.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CalculadoraRecetas
@@ -18,8 +10,15 @@ namespace CalculadoraRecetas
         private frmClientesABM _frmClienteABM;
         private frmPedidosABM _frmPedidos;
         private frmEstadisticas _frmEstadistica;
+        private frmCostoMaterialesABM _frmCostoMateriales;
 
-        public frmMain(frmMateriasPrimasABM frmMpABM, frmRecetasABM frmRecetaABM, frmClientesABM frmClienteABM, frmPedidosABM frmPedidos, frmEstadisticas frmEstadistica)
+        public frmMain(
+            frmMateriasPrimasABM frmMpABM, 
+            frmRecetasABM frmRecetaABM, 
+            frmClientesABM frmClienteABM, 
+            frmPedidosABM frmPedidos, 
+            frmEstadisticas frmEstadistica,
+            frmCostoMaterialesABM frmCostoMateriales)
         {
             InitializeComponent();
 
@@ -28,6 +27,8 @@ namespace CalculadoraRecetas
             _frmClienteABM = frmClienteABM;
             _frmPedidos = frmPedidos;
             _frmEstadistica = frmEstadistica;
+
+            _frmCostoMateriales = frmCostoMateriales;
         }
 
         private void AddFormInPanel(Form fh, string modulo)
@@ -67,6 +68,11 @@ namespace CalculadoraRecetas
         private void btnEstadisticas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddFormInPanel(_frmEstadistica, "Estadistica");
+        }
+
+        private void btnCostosMateriles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddFormInPanel(_frmCostoMateriales, "Costos - Materiales");
         }
     }
 }

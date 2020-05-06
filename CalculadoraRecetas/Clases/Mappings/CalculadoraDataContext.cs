@@ -1,10 +1,5 @@
 ﻿using CalculadoraRecetas.Clases.Dominio;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculadoraRecetas.Clases.Mappings
 {
@@ -19,6 +14,9 @@ namespace CalculadoraRecetas.Clases.Mappings
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Receta> Recetas { get; set; }
 
+        public DbSet<Proveedor> Proveedores { get; set; }
+        public DbSet<CostoMateriales> CostoMateriales { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ClienteMap());
@@ -27,6 +25,9 @@ namespace CalculadoraRecetas.Clases.Mappings
             modelBuilder.Configurations.Add(new OrdenMap());
             modelBuilder.Configurations.Add(new PedidoMap());
             modelBuilder.Configurations.Add(new RecetaMap());
+
+            modelBuilder.Configurations.Add(new ProveedorMap());
+            modelBuilder.Configurations.Add(new CostoMaterialesMap());
         }
     }
 }

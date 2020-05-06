@@ -95,18 +95,22 @@
     <Compile Include="Clases\DAL\PedidosDAL.cs" />
     <Compile Include="Clases\DAL\RecetasDAL.cs" />
     <Compile Include="Clases\Dominio\Cliente.cs" />
+    <Compile Include="Clases\Dominio\CostoMateriales.cs" />
     <Compile Include="Clases\Dominio\Ingrediente.cs" />
     <Compile Include="Clases\Dominio\MateriaPrima.cs" />
     <Compile Include="Clases\Dominio\Orden.cs" />
     <Compile Include="Clases\Dominio\Pedido.cs" />
+    <Compile Include="Clases\Dominio\Proveedor.cs" />
     <Compile Include="Clases\Dominio\Receta.cs" />
     <Compile Include="Clases\Helpers\MessageManager.cs" />
     <Compile Include="Clases\Mappings\CalculadoraDataContext.cs" />
     <Compile Include="Clases\Mappings\ClienteMap.cs" />
+    <Compile Include="Clases\Mappings\CostoMaterialesMap.cs" />
     <Compile Include="Clases\Mappings\IngredienteMap.cs" />
     <Compile Include="Clases\Mappings\MateriaPrimaMap.cs" />
     <Compile Include="Clases\Mappings\OrdenMap.cs" />
     <Compile Include="Clases\Mappings\PedidoMap.cs" />
+    <Compile Include="Clases\Mappings\ProveedorMap.cs" />
     <Compile Include="Clases\Mappings\RecetaMap.cs" />
     <Compile Include="Clases\StaticHelper\GenerateBackupHelper.cs" />
     <Compile Include="Clases\StaticHelper\LogErrorHelper.cs" />
@@ -121,6 +125,18 @@
     </Compile>
     <Compile Include="Forms\frmClientesABM.Designer.cs">
       <DependentUpon>frmClientesABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCostoMaterialesABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCostoMaterialesABM.Designer.cs">
+      <DependentUpon>frmCostoMaterialesABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCostoMaterialesAddMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCostoMaterialesAddMod.Designer.cs">
+      <DependentUpon>frmCostoMaterialesAddMod.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmEstadisticas.cs">
       <SubType>Form</SubType>
@@ -145,6 +161,12 @@
     </Compile>
     <Compile Include="Forms\frmPedidosAddMod.Designer.cs">
       <DependentUpon>frmPedidosAddMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProveedoresMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProveedoresMateriales.Designer.cs">
+      <DependentUpon>frmProveedoresMateriales.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -214,6 +236,22 @@
     <Compile Include="Migrations\202005032301243_Add_NotasYPrecioVenta_Pedidos.Designer.cs">
       <DependentUpon>202005032301243_Add_NotasYPrecioVenta_Pedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005060002255_NuevaTabla_CostoMateriales.cs" />
+    <Compile Include="Migrations\202005060002255_NuevaTabla_CostoMateriales.Designer.cs">
+      <DependentUpon>202005060002255_NuevaTabla_CostoMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005060037152_Add_MateriaPrimaFK_CostoMateriales.cs" />
+    <Compile Include="Migrations\202005060037152_Add_MateriaPrimaFK_CostoMateriales.Designer.cs">
+      <DependentUpon>202005060037152_Add_MateriaPrimaFK_CostoMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005060056065_NuevaTabla_Proveedores.cs" />
+    <Compile Include="Migrations\202005060056065_NuevaTabla_Proveedores.Designer.cs">
+      <DependentUpon>202005060056065_NuevaTabla_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005060058352_Add_ProveedorId_CostoMateriales.cs" />
+    <Compile Include="Migrations\202005060058352_Add_ProveedorId_CostoMateriales.Designer.cs">
+      <DependentUpon>202005060058352_Add_ProveedorId_CostoMateriales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -222,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmClientesABM.resx">
       <DependentUpon>frmClientesABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCostoMaterialesABM.resx">
+      <DependentUpon>frmCostoMaterialesABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCostoMaterialesAddMod.resx">
+      <DependentUpon>frmCostoMaterialesAddMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEstadisticas.resx">
       <DependentUpon>frmEstadisticas.cs</DependentUpon>
@@ -243,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPedidosAddMod.resx">
       <DependentUpon>frmPedidosAddMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProveedoresMateriales.resx">
+      <DependentUpon>frmProveedoresMateriales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRecetasABM.resx">
       <DependentUpon>frmRecetasABM.cs</DependentUpon>
@@ -276,6 +323,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005032301243_Add_NotasYPrecioVenta_Pedidos.resx">
       <DependentUpon>202005032301243_Add_NotasYPrecioVenta_Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005060002255_NuevaTabla_CostoMateriales.resx">
+      <DependentUpon>202005060002255_NuevaTabla_CostoMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005060037152_Add_MateriaPrimaFK_CostoMateriales.resx">
+      <DependentUpon>202005060037152_Add_MateriaPrimaFK_CostoMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005060056065_NuevaTabla_Proveedores.resx">
+      <DependentUpon>202005060056065_NuevaTabla_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005060058352_Add_ProveedorId_CostoMateriales.resx">
+      <DependentUpon>202005060058352_Add_ProveedorId_CostoMateriales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
