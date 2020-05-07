@@ -72,7 +72,7 @@ namespace CalculadoraRecetas
 
         private void btnCostosMateriles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddFormInPanel(_frmCostoMateriales, "Costos - Materiales");
+            AddFormInPanel(_frmCostoMateriales, "Costos de Materiales");
         }
     }
 }

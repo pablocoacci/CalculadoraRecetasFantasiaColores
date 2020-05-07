@@ -93,6 +93,7 @@
     <Compile Include="Clases\DAL\IObjectDAL.cs" />
     <Compile Include="Clases\DAL\MateriasPrimasDAL.cs" />
     <Compile Include="Clases\DAL\PedidosDAL.cs" />
+    <Compile Include="Clases\DAL\ProveedoresDAL.cs" />
     <Compile Include="Clases\DAL\RecetasDAL.cs" />
     <Compile Include="Clases\Dominio\Cliente.cs" />
     <Compile Include="Clases\Dominio\CostoMateriales.cs" />
@@ -352,6 +353,7 @@
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.MateriaPrima.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Orden.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Pedido.datasource" />
+    <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Proveedor.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Receta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

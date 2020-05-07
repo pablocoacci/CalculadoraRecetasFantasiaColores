@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CalculadoraRecetas.Clases.Mappings;
 using CalculadoraRecetas.Clases.StaticHelper;
 
 namespace CalculadoraRecetas.Clases.DAL
