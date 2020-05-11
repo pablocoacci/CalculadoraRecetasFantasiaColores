@@ -45,6 +45,7 @@ namespace CalculadoraRecetas
                 builder.RegisterType<Clases.DAL.PedidosDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.Pedido>>();
 
                 builder.RegisterType<Clases.DAL.ProveedoresDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.Proveedor>>();
+                builder.RegisterType<Clases.DAL.CostoMaterialesDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.CostoMateriales>>();
 
                 builder.RegisterType<Forms.frmMateriasPrimasABM>();
                 builder.RegisterType<Forms.frmMateriasPrimasAddMod>();

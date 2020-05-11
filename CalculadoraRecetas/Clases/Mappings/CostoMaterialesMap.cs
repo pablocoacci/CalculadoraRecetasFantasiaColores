@@ -24,6 +24,11 @@ namespace CalculadoraRecetas.Clases.Mappings
 
             this.HasRequired(a => a.MateriaPrima).WithMany().HasForeignKey(a => a.Id_MateriaPrima);
             this.HasRequired(a => a.Proveedor).WithMany().HasForeignKey(a => a.Id_Proveedor);
+
+            this.Ignore(a => a.MesCompra);
+            this.Ignore(a => a.CostoTotalSugerido);
+            this.Ignore(a => a.NombreMateriaPrima);
+            this.Ignore(a => a.NombreProveedor);
         }
     }
 }

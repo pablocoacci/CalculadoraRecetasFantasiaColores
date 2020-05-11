@@ -1,5 +1,6 @@
 ﻿using CalculadoraRecetas.Clases.Dominio;
 using CalculadoraRecetas.Clases.StaticHelper;
+using CalculadoraRecetas.Clases.StaticHelper.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +62,9 @@ namespace CalculadoraRecetas.Clases.DAL
 
                 if (error != string.Empty)
                     throw new Exception("Ocurrio un error durante el Save: " + error);
+
+                ped.FechaEntrega = ped.FechaEntrega.SacarHoras();
+                ped.FechaPedido = ped.FechaPedido.SacarHoras();
 
                 if (ped.Id == 0)
                     _dbContext.Pedidos.Add(ped);

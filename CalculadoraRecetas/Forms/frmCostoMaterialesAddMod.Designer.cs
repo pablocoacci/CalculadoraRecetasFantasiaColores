@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -35,25 +36,43 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
+            this.bsCostoMaterial = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.dtpFechaCompra = new System.Windows.Forms.DateTimePicker();
+            this.txtDetalle = new DevExpress.XtraEditors.TextEdit();
+            this.txtPrecioUnitario = new DevExpress.XtraEditors.TextEdit();
+            this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
+            this.txtCostoTotal = new DevExpress.XtraEditors.TextEdit();
+            this.txtNota = new DevExpress.XtraEditors.MemoEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bsMateriaPrimaLista = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cboProveedores = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bsProveedoresLista = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAbreviatura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCostoMaterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetalle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioUnitario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCostoTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNota.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMateriaPrima.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMateriaPrimaLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProveedores.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProveedoresLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,18 +132,24 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 199);
+            this.label8.Location = new System.Drawing.Point(42, 225);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "Costo Total:";
             // 
-            // textEdit1
+            // txtId
             // 
-            this.textEdit1.Location = new System.Drawing.Point(112, 12);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(181, 20);
-            this.textEdit1.TabIndex = 8;
+            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(112, 12);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(181, 20);
+            this.txtId.TabIndex = 8;
+            // 
+            // bsCostoMaterial
+            // 
+            this.bsCostoMaterial.DataSource = typeof(CalculadoraRecetas.Clases.Dominio.CostoMateriales);
             // 
             // label2
             // 
@@ -135,63 +160,54 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Materia Prima:";
             // 
-            // comboBox1
+            // dtpFechaCompra
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 9;
+            this.dtpFechaCompra.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsCostoMaterial, "FechaCompra", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "d"));
+            this.dtpFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaCompra.Location = new System.Drawing.Point(112, 92);
+            this.dtpFechaCompra.Name = "dtpFechaCompra";
+            this.dtpFechaCompra.Size = new System.Drawing.Size(181, 20);
+            this.dtpFechaCompra.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // txtDetalle
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(112, 92);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.txtDetalle.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Detalle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtDetalle.Location = new System.Drawing.Point(112, 118);
+            this.txtDetalle.Name = "txtDetalle";
+            this.txtDetalle.Size = new System.Drawing.Size(181, 20);
+            this.txtDetalle.TabIndex = 13;
             // 
-            // comboBox2
+            // txtPrecioUnitario
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(112, 65);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(181, 21);
-            this.comboBox2.TabIndex = 12;
+            this.txtPrecioUnitario.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "PrecioUnitario", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(112, 144);
+            this.txtPrecioUnitario.Name = "txtPrecioUnitario";
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(181, 20);
+            this.txtPrecioUnitario.TabIndex = 14;
             // 
-            // textEdit2
+            // txtCantidad
             // 
-            this.textEdit2.Location = new System.Drawing.Point(112, 118);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(181, 20);
-            this.textEdit2.TabIndex = 13;
+            this.txtCantidad.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Cantidad", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
+            this.txtCantidad.Location = new System.Drawing.Point(112, 170);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(181, 20);
+            this.txtCantidad.TabIndex = 15;
             // 
-            // textEdit3
+            // txtCostoTotal
             // 
-            this.textEdit3.Location = new System.Drawing.Point(112, 144);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(181, 20);
-            this.textEdit3.TabIndex = 14;
+            this.txtCostoTotal.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "CostoTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
+            this.txtCostoTotal.Location = new System.Drawing.Point(112, 222);
+            this.txtCostoTotal.Name = "txtCostoTotal";
+            this.txtCostoTotal.Size = new System.Drawing.Size(181, 20);
+            this.txtCostoTotal.TabIndex = 16;
             // 
-            // textEdit4
+            // txtNota
             // 
-            this.textEdit4.Location = new System.Drawing.Point(112, 170);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(181, 20);
-            this.textEdit4.TabIndex = 15;
-            // 
-            // textEdit5
-            // 
-            this.textEdit5.Location = new System.Drawing.Point(112, 196);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(181, 20);
-            this.textEdit5.TabIndex = 16;
-            // 
-            // memoEdit1
-            // 
-            this.memoEdit1.Location = new System.Drawing.Point(324, 31);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(249, 185);
-            this.memoEdit1.TabIndex = 17;
+            this.txtNota.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Notas", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtNota.Location = new System.Drawing.Point(324, 31);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(249, 207);
+            this.txtNota.TabIndex = 17;
             // 
             // label9
             // 
@@ -204,40 +220,140 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(417, 231);
+            this.btnAceptar.Location = new System.Drawing.Point(417, 244);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(498, 231);
+            this.btnCancelar.Location = new System.Drawing.Point(498, 244);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cboMateriaPrima
+            // 
+            this.cboMateriaPrima.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Id_MateriaPrima", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
+            this.cboMateriaPrima.EditValue = "";
+            this.cboMateriaPrima.Location = new System.Drawing.Point(112, 38);
+            this.cboMateriaPrima.Name = "cboMateriaPrima";
+            this.cboMateriaPrima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboMateriaPrima.Properties.DataSource = this.bsMateriaPrimaLista;
+            this.cboMateriaPrima.Properties.DisplayMember = "Nombre";
+            this.cboMateriaPrima.Properties.ValueMember = "Id";
+            this.cboMateriaPrima.Properties.View = this.gridLookUpEdit1View;
+            this.cboMateriaPrima.Size = new System.Drawing.Size(181, 20);
+            this.cboMateriaPrima.TabIndex = 21;
+            // 
+            // bsMateriaPrimaLista
+            // 
+            this.bsMateriaPrimaLista.DataSource = typeof(CalculadoraRecetas.Clases.Dominio.MateriaPrima);
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colNombre,
+            this.colAbreviatura});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // cboProveedores
+            // 
+            this.cboProveedores.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Id_Proveedor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
+            this.cboProveedores.EditValue = "";
+            this.cboProveedores.Location = new System.Drawing.Point(112, 64);
+            this.cboProveedores.Name = "cboProveedores";
+            this.cboProveedores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboProveedores.Properties.DataSource = this.bsProveedoresLista;
+            this.cboProveedores.Properties.DisplayMember = "Nombre";
+            this.cboProveedores.Properties.ValueMember = "Id";
+            this.cboProveedores.Properties.View = this.gridView1;
+            this.cboProveedores.Size = new System.Drawing.Size(181, 20);
+            this.cboProveedores.TabIndex = 22;
+            // 
+            // bsProveedoresLista
+            // 
+            this.bsProveedoresLista.DataSource = typeof(CalculadoraRecetas.Clases.Dominio.Proveedor);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colNombre1});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(24, 199);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Costo Sugerido:";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "CostoTotalSugerido", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(112, 196);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(181, 20);
+            this.textEdit1.TabIndex = 24;
+            // 
+            // colNombre
+            // 
+            this.colNombre.FieldName = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Visible = true;
+            this.colNombre.VisibleIndex = 0;
+            // 
+            // colAbreviatura
+            // 
+            this.colAbreviatura.FieldName = "Abreviatura";
+            this.colAbreviatura.Name = "colAbreviatura";
+            this.colAbreviatura.Visible = true;
+            this.colAbreviatura.VisibleIndex = 1;
+            // 
+            // colNombre1
+            // 
+            this.colNombre1.FieldName = "Nombre";
+            this.colNombre1.Name = "colNombre1";
+            this.colNombre1.Visible = true;
+            this.colNombre1.VisibleIndex = 0;
             // 
             // frmCostoMaterialesAddMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 263);
+            this.ClientSize = new System.Drawing.Size(586, 276);
+            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cboProveedores);
+            this.Controls.Add(this.cboMateriaPrima);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.memoEdit1);
-            this.Controls.Add(this.textEdit5);
-            this.Controls.Add(this.textEdit4);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtNota);
+            this.Controls.Add(this.txtCostoTotal);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtPrecioUnitario);
+            this.Controls.Add(this.txtDetalle);
+            this.Controls.Add(this.dtpFechaCompra);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -245,14 +361,29 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCostoMaterialesAddMod";
-            this.Text = "frmCostoMaterialesAddMod";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Costo de Material";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCostoMaterialesAddMod_FormClosing);
+            this.Load += new System.EventHandler(this.frmCostoMaterialesAddMod_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCostoMaterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetalle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioUnitario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCostoTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNota.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMateriaPrima.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMateriaPrimaLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProveedores.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProveedoresLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,18 +398,28 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private System.Windows.Forms.DateTimePicker dtpFechaCompra;
+        private DevExpress.XtraEditors.TextEdit txtDetalle;
+        private DevExpress.XtraEditors.TextEdit txtPrecioUnitario;
+        private DevExpress.XtraEditors.TextEdit txtCantidad;
+        private DevExpress.XtraEditors.TextEdit txtCostoTotal;
+        private DevExpress.XtraEditors.MemoEdit txtNota;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.BindingSource bsCostoMaterial;
+        private DevExpress.XtraEditors.GridLookUpEdit cboMateriaPrima;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.GridLookUpEdit cboProveedores;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource bsMateriaPrimaLista;
+        private System.Windows.Forms.BindingSource bsProveedoresLista;
+        private System.Windows.Forms.Label label10;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombre;
+        private DevExpress.XtraGrid.Columns.GridColumn colAbreviatura;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombre1;
     }
 }

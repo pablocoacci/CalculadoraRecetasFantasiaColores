@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="Clases\DAL\BaseDAL.cs" />
     <Compile Include="Clases\DAL\ClientesDAL.cs" />
+    <Compile Include="Clases\DAL\CostoMaterialesDAL.cs" />
     <Compile Include="Clases\DAL\IngredientesDAL.cs" />
     <Compile Include="Clases\DAL\IObjectDAL.cs" />
     <Compile Include="Clases\DAL\MateriasPrimasDAL.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Clases\Mappings\PedidoMap.cs" />
     <Compile Include="Clases\Mappings\ProveedorMap.cs" />
     <Compile Include="Clases\Mappings\RecetaMap.cs" />
+    <Compile Include="Clases\StaticHelper\Extensions\DateTimeExtension.cs" />
     <Compile Include="Clases\StaticHelper\GenerateBackupHelper.cs" />
     <Compile Include="Clases\StaticHelper\LogErrorHelper.cs" />
     <Compile Include="Forms\frmClienteAddMod.cs">
@@ -349,6 +351,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Cliente.datasource" />
+    <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.CostoMateriales.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Ingrediente.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.MateriaPrima.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Orden.datasource" />

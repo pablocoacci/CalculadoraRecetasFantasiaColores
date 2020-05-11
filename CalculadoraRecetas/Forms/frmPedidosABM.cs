@@ -22,22 +22,22 @@ namespace CalculadoraRecetas.Forms
             _frmPedAddMod = frmPedAddMod;
             _messageManager = messageManager;
         }
-        
+
         private void ResetBinding()
         {
-            DateTime dtDesde = dtpDesdePedido.Value;
-            DateTime dtHasta = dtpHastaPedido.Value;
+            DateTime dtDesde = new DateTime(dtpDesdePedido.Value.Year, dtpDesdePedido.Value.Month, dtpDesdePedido.Value.Day);
+            DateTime dtHasta = new DateTime(dtpHastaPedido.Value.Year, dtpHastaPedido.Value.Month, dtpHastaPedido.Value.Day);
             _pedDAL.ResetContext();
-            
-            if(dtHasta<dtDesde)
+
+            if (dtHasta < dtDesde)
             {
                 MessageBox.Show(_messageManager.ErrorDesdeMayorAHasta(), _messageManager.AtencionTitle(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             if (cboTipoFecha.SelectedItem.ToString() == "Fecha Pedido")
                 bsPedidosLista.DataSource = _pedDAL.GetContext().Pedidos.Where(a => dtDesde <= a.FechaPedido && a.FechaPedido <= dtHasta).ToList();
-            else if(cboTipoFecha.SelectedItem.ToString() == "Fecha Entrega")
+            else if (cboTipoFecha.SelectedItem.ToString() == "Fecha Entrega")
                 bsPedidosLista.DataSource = _pedDAL.GetContext().Pedidos.Where(a => dtDesde <= a.FechaEntrega && a.FechaEntrega <= dtHasta).ToList();
             else
                 bsPedidosLista.DataSource = _pedDAL.GetAllObj();
@@ -56,8 +56,8 @@ namespace CalculadoraRecetas.Forms
         private void frmPedidosABM_Load(object sender, EventArgs e)
         {
             //ResetBinding();
-            dtpDesdePedido.Value = DateTime.Now;
-            dtpHastaPedido.Value = DateTime.Now.AddMonths(1);
+            //dtpDesdePedido.Value = DateTime.Now;
+            //dtpHastaPedido.Value = DateTime.Now.AddMonths(1);
             cboTipoFecha.SelectedIndex = 2;
         }
 

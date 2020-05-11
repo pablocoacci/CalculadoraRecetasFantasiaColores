@@ -16,5 +16,10 @@ namespace CalculadoraRecetas.Clases.Dominio
 
         public virtual MateriaPrima MateriaPrima { get; set; }
         public virtual Proveedor Proveedor { get; set; }
+
+        public string MesCompra { get { return FechaCompra.ToString("MMMM"); } }
+        public decimal CostoTotalSugerido { get { return Math.Round(Cantidad * PrecioUnitario, 2); } }
+        public string NombreMateriaPrima { get { return MateriaPrima.Nombre; } }
+        public string NombreProveedor { get { return Proveedor.Nombre; } }
     }
 }
