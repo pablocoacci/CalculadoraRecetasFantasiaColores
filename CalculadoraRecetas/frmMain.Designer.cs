@@ -36,6 +36,7 @@
             this.btnPedidos = new DevExpress.XtraBars.BarButtonItem();
             this.btnEstadisticas = new DevExpress.XtraBars.BarButtonItem();
             this.btnCostosMateriles = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCostoServicios = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -54,9 +55,10 @@
             this.btnClientes,
             this.btnPedidos,
             this.btnEstadisticas,
-            this.btnCostosMateriles});
+            this.btnCostosMateriles,
+            this.btnCostoServicios});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -118,7 +120,18 @@
             this.btnCostosMateriles.Caption = "Materiales";
             this.btnCostosMateriles.Id = 6;
             this.btnCostosMateriles.Name = "btnCostosMateriles";
+            this.btnCostosMateriles.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnCostosMateriles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCostosMateriles_ItemClick);
+            // 
+            // btnCostoServicios
+            // 
+            this.btnCostoServicios.Caption = "Servicios";
+            this.btnCostoServicios.Id = 7;
+            this.btnCostoServicios.Name = "btnCostoServicios";
+            this.btnCostoServicios.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnCostoServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCostoServicios_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -146,6 +159,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnCostosMateriles);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCostoServicios);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // panelPrincipal
@@ -186,6 +200,7 @@
         private DevExpress.XtraBars.BarButtonItem btnCostosMateriles;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem btnCostoServicios;
     }
 }
 

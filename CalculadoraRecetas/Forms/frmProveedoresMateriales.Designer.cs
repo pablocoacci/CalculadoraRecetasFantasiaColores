@@ -34,13 +34,13 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.grdProveedores = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bsProveedores = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdProveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombreProveedor
@@ -90,6 +90,10 @@
             this.grdProveedores.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // bsProveedores
+            // 
+            this.bsProveedores.DataSource = typeof(CalculadoraRecetas.Clases.Dominio.Proveedor);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -97,10 +101,6 @@
             this.gridView1.GridControl = this.grdProveedores;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // bsProveedores
-            // 
-            this.bsProveedores.DataSource = typeof(CalculadoraRecetas.Clases.Dominio.Proveedor);
             // 
             // colNombre
             // 
@@ -120,7 +120,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombreProveedor);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(399, 356);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(399, 356);
             this.Name = "frmProveedoresMateriales";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -129,8 +131,8 @@
             this.Load += new System.EventHandler(this.frmProveedoresMateriales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

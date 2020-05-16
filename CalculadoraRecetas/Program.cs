@@ -45,7 +45,9 @@ namespace CalculadoraRecetas
                 builder.RegisterType<Clases.DAL.PedidosDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.Pedido>>();
 
                 builder.RegisterType<Clases.DAL.ProveedoresDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.Proveedor>>();
+                builder.RegisterType<Clases.DAL.ServiviosDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.Servicio>>();
                 builder.RegisterType<Clases.DAL.CostoMaterialesDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.CostoMateriales>>();
+                builder.RegisterType<Clases.DAL.CostoServiciosDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.CostoServicio>>();
 
                 builder.RegisterType<Forms.frmMateriasPrimasABM>();
                 builder.RegisterType<Forms.frmMateriasPrimasAddMod>();
@@ -67,6 +69,10 @@ namespace CalculadoraRecetas
                 builder.RegisterType<Forms.frmProveedoresMateriales>();
                 builder.RegisterType<Forms.frmCostoMaterialesABM>();
                 builder.RegisterType<Forms.frmCostoMaterialesAddMod>();
+
+                builder.RegisterType<Forms.frmServicios>();
+                builder.RegisterType<Forms.frmCostoServiciosABM>();
+                builder.RegisterType<Forms.frmCostoServicioAddMod>();
 
                 builder.RegisterType<frmMain>();
 

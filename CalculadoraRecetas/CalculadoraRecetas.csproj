@@ -90,30 +90,36 @@
     <Compile Include="Clases\DAL\BaseDAL.cs" />
     <Compile Include="Clases\DAL\ClientesDAL.cs" />
     <Compile Include="Clases\DAL\CostoMaterialesDAL.cs" />
+    <Compile Include="Clases\DAL\CostoServiciosDAL.cs" />
     <Compile Include="Clases\DAL\IngredientesDAL.cs" />
     <Compile Include="Clases\DAL\IObjectDAL.cs" />
     <Compile Include="Clases\DAL\MateriasPrimasDAL.cs" />
     <Compile Include="Clases\DAL\PedidosDAL.cs" />
     <Compile Include="Clases\DAL\ProveedoresDAL.cs" />
     <Compile Include="Clases\DAL\RecetasDAL.cs" />
+    <Compile Include="Clases\DAL\ServiviosDAL.cs" />
     <Compile Include="Clases\Dominio\Cliente.cs" />
     <Compile Include="Clases\Dominio\CostoMateriales.cs" />
+    <Compile Include="Clases\Dominio\CostoServicio.cs" />
     <Compile Include="Clases\Dominio\Ingrediente.cs" />
     <Compile Include="Clases\Dominio\MateriaPrima.cs" />
     <Compile Include="Clases\Dominio\Orden.cs" />
     <Compile Include="Clases\Dominio\Pedido.cs" />
     <Compile Include="Clases\Dominio\Proveedor.cs" />
     <Compile Include="Clases\Dominio\Receta.cs" />
+    <Compile Include="Clases\Dominio\Servicio.cs" />
     <Compile Include="Clases\Helpers\MessageManager.cs" />
     <Compile Include="Clases\Mappings\CalculadoraDataContext.cs" />
     <Compile Include="Clases\Mappings\ClienteMap.cs" />
     <Compile Include="Clases\Mappings\CostoMaterialesMap.cs" />
+    <Compile Include="Clases\Mappings\CostoServicioMap.cs" />
     <Compile Include="Clases\Mappings\IngredienteMap.cs" />
     <Compile Include="Clases\Mappings\MateriaPrimaMap.cs" />
     <Compile Include="Clases\Mappings\OrdenMap.cs" />
     <Compile Include="Clases\Mappings\PedidoMap.cs" />
     <Compile Include="Clases\Mappings\ProveedorMap.cs" />
     <Compile Include="Clases\Mappings\RecetaMap.cs" />
+    <Compile Include="Clases\Mappings\ServicioMap.cs" />
     <Compile Include="Clases\StaticHelper\Extensions\DateTimeExtension.cs" />
     <Compile Include="Clases\StaticHelper\GenerateBackupHelper.cs" />
     <Compile Include="Clases\StaticHelper\LogErrorHelper.cs" />
@@ -140,6 +146,18 @@
     </Compile>
     <Compile Include="Forms\frmCostoMaterialesAddMod.Designer.cs">
       <DependentUpon>frmCostoMaterialesAddMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCostoServicioAddMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCostoServicioAddMod.Designer.cs">
+      <DependentUpon>frmCostoServicioAddMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCostoServiciosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCostoServiciosABM.Designer.cs">
+      <DependentUpon>frmCostoServiciosABM.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmEstadisticas.cs">
       <SubType>Form</SubType>
@@ -170,6 +188,12 @@
     </Compile>
     <Compile Include="Forms\frmProveedoresMateriales.Designer.cs">
       <DependentUpon>frmProveedoresMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmServicios.Designer.cs">
+      <DependentUpon>frmServicios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -255,6 +279,14 @@
     <Compile Include="Migrations\202005060058352_Add_ProveedorId_CostoMateriales.Designer.cs">
       <DependentUpon>202005060058352_Add_ProveedorId_CostoMateriales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005142111242_Nueva_Tablas_CostoServicios.cs" />
+    <Compile Include="Migrations\202005142111242_Nueva_Tablas_CostoServicios.Designer.cs">
+      <DependentUpon>202005142111242_Nueva_Tablas_CostoServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005142331524_Add_Notas_ConstoServicios.cs" />
+    <Compile Include="Migrations\202005142331524_Add_Notas_ConstoServicios.Designer.cs">
+      <DependentUpon>202005142331524_Add_Notas_ConstoServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -269,6 +301,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCostoMaterialesAddMod.resx">
       <DependentUpon>frmCostoMaterialesAddMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCostoServicioAddMod.resx">
+      <DependentUpon>frmCostoServicioAddMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCostoServiciosABM.resx">
+      <DependentUpon>frmCostoServiciosABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEstadisticas.resx">
       <DependentUpon>frmEstadisticas.cs</DependentUpon>
@@ -299,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRecetasAddMod.resx">
       <DependentUpon>frmRecetasAddMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmServicios.resx">
+      <DependentUpon>frmServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -339,6 +380,12 @@
     <EmbeddedResource Include="Migrations\202005060058352_Add_ProveedorId_CostoMateriales.resx">
       <DependentUpon>202005060058352_Add_ProveedorId_CostoMateriales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005142111242_Nueva_Tablas_CostoServicios.resx">
+      <DependentUpon>202005142111242_Nueva_Tablas_CostoServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005142331524_Add_Notas_ConstoServicios.resx">
+      <DependentUpon>202005142331524_Add_Notas_ConstoServicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -352,12 +399,14 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Cliente.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.CostoMateriales.datasource" />
+    <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.CostoServicio.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Ingrediente.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.MateriaPrima.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Orden.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Pedido.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Proveedor.datasource" />
     <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Receta.datasource" />
+    <None Include="Properties\DataSources\CalculadoraRecetas.Clases.Dominio.Servicio.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

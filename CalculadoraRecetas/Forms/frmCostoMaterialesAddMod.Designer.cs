@@ -51,14 +51,14 @@
             this.cboMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsMateriaPrimaLista = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAbreviatura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboProveedores = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bsProveedoresLista = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colNombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAbreviatura = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCostoMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDetalle.Properties)).BeginInit();
@@ -182,6 +182,8 @@
             this.txtPrecioUnitario.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "PrecioUnitario", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
             this.txtPrecioUnitario.Location = new System.Drawing.Point(112, 144);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
+            this.txtPrecioUnitario.Properties.Mask.EditMask = "n2";
+            this.txtPrecioUnitario.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPrecioUnitario.Size = new System.Drawing.Size(181, 20);
             this.txtPrecioUnitario.TabIndex = 14;
             // 
@@ -190,6 +192,8 @@
             this.txtCantidad.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Cantidad", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
             this.txtCantidad.Location = new System.Drawing.Point(112, 170);
             this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Properties.Mask.EditMask = "n0";
+            this.txtCantidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCantidad.Size = new System.Drawing.Size(181, 20);
             this.txtCantidad.TabIndex = 15;
             // 
@@ -198,6 +202,8 @@
             this.txtCostoTotal.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "CostoTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
             this.txtCostoTotal.Location = new System.Drawing.Point(112, 222);
             this.txtCostoTotal.Name = "txtCostoTotal";
+            this.txtCostoTotal.Properties.Mask.EditMask = "n2";
+            this.txtCostoTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCostoTotal.Size = new System.Drawing.Size(181, 20);
             this.txtCostoTotal.TabIndex = 16;
             // 
@@ -267,6 +273,20 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // colNombre
+            // 
+            this.colNombre.FieldName = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Visible = true;
+            this.colNombre.VisibleIndex = 0;
+            // 
+            // colAbreviatura
+            // 
+            this.colAbreviatura.FieldName = "Abreviatura";
+            this.colAbreviatura.Name = "colAbreviatura";
+            this.colAbreviatura.Visible = true;
+            this.colAbreviatura.VisibleIndex = 1;
+            // 
             // cboProveedores
             // 
             this.cboProveedores.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bsCostoMaterial, "Id_Proveedor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
@@ -295,6 +315,13 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // colNombre1
+            // 
+            this.colNombre1.FieldName = "Nombre";
+            this.colNombre1.Name = "colNombre1";
+            this.colNombre1.Visible = true;
+            this.colNombre1.VisibleIndex = 0;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -312,27 +339,6 @@
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(181, 20);
             this.textEdit1.TabIndex = 24;
-            // 
-            // colNombre
-            // 
-            this.colNombre.FieldName = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.Visible = true;
-            this.colNombre.VisibleIndex = 0;
-            // 
-            // colAbreviatura
-            // 
-            this.colAbreviatura.FieldName = "Abreviatura";
-            this.colAbreviatura.Name = "colAbreviatura";
-            this.colAbreviatura.Visible = true;
-            this.colAbreviatura.VisibleIndex = 1;
-            // 
-            // colNombre1
-            // 
-            this.colNombre1.FieldName = "Nombre";
-            this.colNombre1.Name = "colNombre1";
-            this.colNombre1.Visible = true;
-            this.colNombre1.VisibleIndex = 0;
             // 
             // frmCostoMaterialesAddMod
             // 

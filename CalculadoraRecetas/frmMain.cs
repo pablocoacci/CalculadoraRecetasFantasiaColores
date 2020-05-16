@@ -11,6 +11,7 @@ namespace CalculadoraRecetas
         private frmPedidosABM _frmPedidos;
         private frmEstadisticas _frmEstadistica;
         private frmCostoMaterialesABM _frmCostoMateriales;
+        private frmCostoServiciosABM _frmCostoServicios;
 
         public frmMain(
             frmMateriasPrimasABM frmMpABM, 
@@ -18,7 +19,8 @@ namespace CalculadoraRecetas
             frmClientesABM frmClienteABM, 
             frmPedidosABM frmPedidos, 
             frmEstadisticas frmEstadistica,
-            frmCostoMaterialesABM frmCostoMateriales)
+            frmCostoMaterialesABM frmCostoMateriales,
+            frmCostoServiciosABM frmCostoServicios)
         {
             InitializeComponent();
 
@@ -29,6 +31,7 @@ namespace CalculadoraRecetas
             _frmEstadistica = frmEstadistica;
 
             _frmCostoMateriales = frmCostoMateriales;
+            _frmCostoServicios = frmCostoServicios;
         }
 
         private void AddFormInPanel(Form fh, string modulo)
@@ -73,6 +76,11 @@ namespace CalculadoraRecetas
         private void btnCostosMateriles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddFormInPanel(_frmCostoMateriales, "Costos de Materiales");
+        }
+
+        private void btnCostoServicios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddFormInPanel(_frmCostoServicios, "Costos de Servicios");
         }
     }
 }

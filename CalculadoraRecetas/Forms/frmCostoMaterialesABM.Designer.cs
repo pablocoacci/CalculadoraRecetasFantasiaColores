@@ -128,6 +128,7 @@
             this.colNotas});
             this.gridView1.GridControl = this.grdCostoMateriales;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             // 
             // colNombreMateriaPrima
             // 
