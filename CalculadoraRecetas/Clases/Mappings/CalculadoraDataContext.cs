@@ -18,6 +18,8 @@ namespace CalculadoraRecetas.Clases.Mappings
         public DbSet<Servicio> Servicios { get; set; }
         public DbSet<CostoMateriales> CostoMateriales { get; set; }
         public DbSet<CostoServicio> CostoServicios { get; set; }
+        public DbSet<CostoFijo> CostoFijos { get; set; }
+        public DbSet<CostoBasico> CostosBasicos { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -33,6 +35,8 @@ namespace CalculadoraRecetas.Clases.Mappings
             modelBuilder.Configurations.Add(new ServicioMap());
             modelBuilder.Configurations.Add(new CostoMaterialesMap());
             modelBuilder.Configurations.Add(new CostoServicioMap());
+            modelBuilder.Configurations.Add(new CostoFijoMap());
+            modelBuilder.Configurations.Add(new CostoBasicoMap());
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CalculadoraRecetas.Clases.Mappings
 {
-    public class ServicioMap : EntityTypeConfiguration<Servicio>
+    public class CostoFijoMap : EntityTypeConfiguration<CostoFijo>
     {
-        public ServicioMap()
+        public CostoFijoMap()
         {
-            this.ToTable("Servicios");
+            this.ToTable("CostosFijos");
 
             this.HasKey(a => a.Id);
             this.Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);

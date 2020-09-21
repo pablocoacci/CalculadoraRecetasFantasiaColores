@@ -48,6 +48,8 @@ namespace CalculadoraRecetas
                 builder.RegisterType<Clases.DAL.ServiviosDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.Servicio>>();
                 builder.RegisterType<Clases.DAL.CostoMaterialesDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.CostoMateriales>>();
                 builder.RegisterType<Clases.DAL.CostoServiciosDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.CostoServicio>>();
+                builder.RegisterType<Clases.DAL.CostosFijosDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.CostoFijo>>();
+                builder.RegisterType<Clases.DAL.CostoBasicoDAL>().As<Clases.DAL.IObjectDAL<Clases.Dominio.CostoBasico>>();
 
                 builder.RegisterType<Forms.frmMateriasPrimasABM>();
                 builder.RegisterType<Forms.frmMateriasPrimasAddMod>();

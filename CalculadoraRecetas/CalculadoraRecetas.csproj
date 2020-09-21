@@ -92,8 +92,10 @@
   <ItemGroup>
     <Compile Include="Clases\DAL\BaseDAL.cs" />
     <Compile Include="Clases\DAL\ClientesDAL.cs" />
+    <Compile Include="Clases\DAL\CostoBasicoDAL.cs" />
     <Compile Include="Clases\DAL\CostoMaterialesDAL.cs" />
     <Compile Include="Clases\DAL\CostoServiciosDAL.cs" />
+    <Compile Include="Clases\DAL\CostosFijosDAL.cs" />
     <Compile Include="Clases\DAL\IngredientesDAL.cs" />
     <Compile Include="Clases\DAL\IObjectDAL.cs" />
     <Compile Include="Clases\DAL\MateriasPrimasDAL.cs" />
@@ -102,6 +104,8 @@
     <Compile Include="Clases\DAL\RecetasDAL.cs" />
     <Compile Include="Clases\DAL\ServiviosDAL.cs" />
     <Compile Include="Clases\Dominio\Cliente.cs" />
+    <Compile Include="Clases\Dominio\CostoBasico.cs" />
+    <Compile Include="Clases\Dominio\CostoFijo.cs" />
     <Compile Include="Clases\Dominio\CostoMateriales.cs" />
     <Compile Include="Clases\Dominio\CostoServicio.cs" />
     <Compile Include="Clases\Dominio\Ingrediente.cs" />
@@ -114,6 +118,8 @@
     <Compile Include="Clases\Helpers\MessageManager.cs" />
     <Compile Include="Clases\Mappings\CalculadoraDataContext.cs" />
     <Compile Include="Clases\Mappings\ClienteMap.cs" />
+    <Compile Include="Clases\Mappings\CostoBasicoMap.cs" />
+    <Compile Include="Clases\Mappings\CostoFijoMap.cs" />
     <Compile Include="Clases\Mappings\CostoMaterialesMap.cs" />
     <Compile Include="Clases\Mappings\CostoServicioMap.cs" />
     <Compile Include="Clases\Mappings\IngredienteMap.cs" />
@@ -290,6 +296,10 @@
     <Compile Include="Migrations\202005142331524_Add_Notas_ConstoServicios.Designer.cs">
       <DependentUpon>202005142331524_Add_Notas_ConstoServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009212318276_nuevas_tablas_costosfijos.cs" />
+    <Compile Include="Migrations\202009212318276_nuevas_tablas_costosfijos.Designer.cs">
+      <DependentUpon>202009212318276_nuevas_tablas_costosfijos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -388,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005142331524_Add_Notas_ConstoServicios.resx">
       <DependentUpon>202005142331524_Add_Notas_ConstoServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009212318276_nuevas_tablas_costosfijos.resx">
+      <DependentUpon>202009212318276_nuevas_tablas_costosfijos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
