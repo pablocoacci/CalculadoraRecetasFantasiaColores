@@ -55,6 +55,8 @@ namespace CalculadoraRecetas.Clases.DAL
 
         public string ValidSave(Proveedor domObj)
         {
+            if (string.IsNullOrEmpty(domObj.Nombre))
+                return "El nombre del proveedor no puede estar vacio";
             if (domObj.Nombre.Length > 50)
                 return "El nombre del proveedor no puede superar los 50 caracteres";
 

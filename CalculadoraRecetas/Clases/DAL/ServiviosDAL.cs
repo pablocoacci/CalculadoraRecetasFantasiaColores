@@ -40,7 +40,7 @@ namespace CalculadoraRecetas.Clases.DAL
                 _dbContext.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LogErrorHelper.LogError(ex);
                 return false;
@@ -54,6 +54,8 @@ namespace CalculadoraRecetas.Clases.DAL
 
         public string ValidSave(Servicio domObj)
         {
+            if (string.IsNullOrEmpty(domObj.Nombre))
+                return "El nombre del servicio no puede ser vacio";
             if (domObj.Nombre.Length > 50)
                 return "El nombre no puede superar los 50 caracteres";
 
