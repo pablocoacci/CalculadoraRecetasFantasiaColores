@@ -76,6 +76,9 @@ namespace CalculadoraRecetas
                 builder.RegisterType<Forms.frmCostoServiciosABM>();
                 builder.RegisterType<Forms.frmCostoServicioAddMod>();
 
+                builder.RegisterType<Forms.frmCostosFijos>();
+                builder.RegisterType<Forms.frmCostoBasicoAddMod>();
+
                 builder.RegisterType<frmMain>();
 
                 Container = builder.Build();

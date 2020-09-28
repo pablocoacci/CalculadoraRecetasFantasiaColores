@@ -13,11 +13,14 @@ namespace CalculadoraRecetas.Clases.Mappings
             this.HasKey(a => a.Id);
             this.Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            this.Property(a => a.IsCostoFijo).HasColumnName("IsCostoFijo").HasColumnType("bit");
-            this.Property(a => a.Nombre).HasColumnName("Nombre").HasColumnType("varchar").HasMaxLength(50);
+            this.Property(a => a.Nombre).HasColumnName("Nombre").HasColumnType("varchar").HasMaxLength(50).IsOptional();
             this.Property(a => a.FechaCosto).HasColumnName("FechaCosto").HasColumnType("datetime");
             this.Property(a => a.Notas).HasColumnName("Notas").HasColumnType("varchar").HasMaxLength(1500);
-            this.Property(a=>a.CostoMonto).HasColumnName("CostoMonto").HasColumnType("decimal").HasPrecision(19, 2);
+            this.Property(a => a.CostoMonto).HasColumnName("CostoMonto").HasColumnType("decimal").HasPrecision(19, 2);
+
+            this.HasOptional(a => a.CostoFijo).WithMany().HasForeignKey(a => a.IdCostoFijo);
+
+            this.Ignore(a => a.IsCostoFijo);
         }
     }
 }
